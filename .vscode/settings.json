@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.mp4": "json",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
