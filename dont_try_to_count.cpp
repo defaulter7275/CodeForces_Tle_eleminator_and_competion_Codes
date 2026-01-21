@@ -11,7 +11,7 @@ bool check(string s,string x){
 int main()
 {
     int t;
-    cin >> t; // Read the number of test cases
+    cin >> t;
     while (t--)
     {
         int n,m;
