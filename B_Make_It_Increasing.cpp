@@ -12,34 +12,56 @@ using pii = pair<int, int>;
 #define sz(x) ((int)(x).size())
 #define F first
 #define S second
-#define endl '\n'
+#define endl '\n'  
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
 
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-    ll n;
+    int n;
     cin >> n;
 
-    if (n < 4 || n % 2 != 0) {
-        cout << -1 << endl;
-        return;  
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+
+    long long ops = 0;
+
+    for (int i = n - 2; i >= 0; i--) {
+        if (a[i] < a[i + 1]) continue;
+
+        while (a[i] >= a[i + 1] && a[i] > 0) {
+            a[i] >>= 1;   // divide by 2 (faster)
+            ops++;
+        }
+
+        if (a[i] >= a[i + 1]) {
+            cout << -1 << '\n';
+            return;
+        }
     }
 
-    ll mn = (n + 5) / 6;
-    ll mx = n / 4;
-
-    cout << mn << " " << mx << endl;
+    cout << ops << '\n';
 }
+
+
+void solve1() {
+    
+}
+
+
+
+
 
 int main() {
     fastio
 
-    int t;
+    int t = 1;
     cin >> t;
     while (t--) {
         solve();
     }
     return 0;
 }
+
