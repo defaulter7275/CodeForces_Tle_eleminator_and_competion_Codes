@@ -19,11 +19,35 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-    ll n;
-    cin>>n;
-    ll x0 = 0, y = 0;
-    cin>>x0>>y;
-    
+    int n;
+cin >> n;
+
+vi p(n);
+for (int i = 0; i < n; i++) {
+    cin >> p[i];
+}
+
+vi a_prime;
+for (int i = 0; i < n; i++) {
+    int x;
+    cin >> x;
+    if (a_prime.empty() || a_prime.back() != x) {
+        a_prime.pb(x);
+    }
+}
+
+int j = 0;
+for (int i = 0; i < n; i++) {
+    if (j < (int)a_prime.size() && p[i] == a_prime[j]) {
+        j++;
+    }
+}
+
+if (j == (int)a_prime.size()) {
+    cout << "YES\n";
+} else {
+    cout << "NO\n";
+}
 }
 
 int main() {

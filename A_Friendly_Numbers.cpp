@@ -18,12 +18,26 @@ using pii = pair<int, int>;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
+int sod(ll n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
 void solve() {
-    ll n;
-    cin>>n;
-    ll x0 = 0, y = 0;
-    cin>>x0>>y;
+    ll x;
+    cin >> x;
+    int count = 0;
+    for (ll y = x; y <= x + 100; ++y) {
+        if (y - sod(y) == x) {
+            count++;
+        }
+    }
     
+    cout << count << endl;
 }
 
 int main() {
