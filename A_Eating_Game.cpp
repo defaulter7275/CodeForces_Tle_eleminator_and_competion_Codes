@@ -19,24 +19,27 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-ll x, n;
-		cin >> x >> n;
-
-		ll final_pos;
-		if (n % 4 == 1)
-			final_pos = -n; 
-		else if (n % 4 == 2)
-			final_pos = 1; 
-		else if (n % 4 == 3)
-			final_pos = n + 1; 
-		else if (n % 4 == 0)
-			final_pos = 0;
-		if (x % 2 == 0)
-			final_pos = x + final_pos;
-		else
-			final_pos = x - final_pos;
-
-		cout << final_pos << endl;
+    int n;
+    cin>>n;
+    vi a(n);
+    for(int i=0;i<n;i++) cin>>a[i];
+    // if(n==1){
+    //     cout<<1<<endl;
+    // }
+    sort(all(a));
+        int mx = a[0];
+    int count = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] > mx) {
+            mx = a[i];
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        if(a[i] == mx) {
+            count++;
+        }
+    }
+    cout << count << endl;
 }
 
 int main() {
