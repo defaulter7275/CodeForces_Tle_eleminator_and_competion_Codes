@@ -19,7 +19,30 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
+    int n;
+    cin>>n;
+    map<int, int> freq;
+    for (int i = 0; i < n * n; i++) {
+        int color;
+        cin >> color;
+        freq[color]++;
+    }
+    if (n == 1) {
+        cout << "NO" << endl;
+        return;
+    }
+
+    bool possible = true;
+    for (auto const& [color, count] : freq) {
+        if (count > (n * n - n)) {
     
+            possible = false;
+            break;
+        }
+    }
+
+    if (possible) cout << "YES" << endl;
+    else cout << "NO" << endl;
 }
 
 int main() {
@@ -32,27 +55,3 @@ int main() {
     }
     return 0;
 }
-
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
-using vll = vector<long long>;
-using pii = pair<int, int>;
-
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-#define sz(x) ((int)(x).size())
-#define F first
-#define S second
-
-auto speedup = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    return 0;
-}();
-
-

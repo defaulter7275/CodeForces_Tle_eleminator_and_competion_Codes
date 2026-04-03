@@ -21,7 +21,7 @@ const ll INF = 1e18;
 void solve() {
     int n;
     cin >> n;
-    long long ones = 0, zeros = 0;
+    ll ones = 0, zeros = 0;
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;

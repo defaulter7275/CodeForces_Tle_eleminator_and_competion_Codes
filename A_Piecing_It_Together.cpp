@@ -19,40 +19,16 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-    
+    cout<<"puzzling\n";
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--) {
         solve();
     }
     return 0;
 }
-
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
-using vll = vector<long long>;
-using pii = pair<int, int>;
-
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-#define sz(x) ((int)(x).size())
-#define F first
-#define S second
-
-auto speedup = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    return 0;
-}();
-
-

@@ -17,10 +17,22 @@ using pii = pair<int, int>;
 
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
-
 void solve() {
-    
+ll a, b;
+cin >> a >> b;
+if (b > a)swap(a, b);
+if (a == b) {
+        cout << "0 0" << endl;
+        return;
+    }
+    else{
+    ll diff=abs(a-b);
+ll moves=min(b%diff, diff-b%diff);
+cout << diff << " " << moves << endl;
 }
+    }
+
+
 
 int main() {
     fastio
@@ -32,27 +44,3 @@ int main() {
     }
     return 0;
 }
-
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
-using vll = vector<long long>;
-using pii = pair<int, int>;
-
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-#define sz(x) ((int)(x).size())
-#define F first
-#define S second
-
-auto speedup = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    return 0;
-}();
-
-
