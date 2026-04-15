@@ -18,27 +18,22 @@ using pii = pair<int, int>;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
+ll gcd(ll a, ll b) {
+    while (b) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
 void solve() {
-  int n;
-    cin >> n;
-    vector<long long> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
+    ll n,m,a,b;
+    cin>>n>>m>>a>>b;
+    if (gcd(n,a)==1&&gcd(m,b)==1&&gcd(n,m)<=2) {
+        cout<<"YES"<<endl;
+    } else {
+        cout << "NO" << endl;
     }
-
-    for (int i = 0; i < n - 1; i++) {
-        long long x = a.back(); 
-
-        for (int j = 0; j < a.size(); j++) {
-            a[j] ^= x;
-        }
-
-        a.pop_back();
-    }
-
-    if (!a.empty()) {
-        cout << a[0] << endl;
-    }}
+}
 
 int main() {
     fastio

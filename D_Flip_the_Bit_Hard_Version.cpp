@@ -18,27 +18,28 @@ using pii = pair<int, int>;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-void solve() {
-  int n;
-    cin >> n;
-    vector<long long> a(n);
-    for (int i = 0; i < n; i++) {
+void solve(){
+int n, k;
+    cin >> n >> k;
+    vector<int> a(n + 1);
+    for (int i = 1; i <= n; i++) {
         cin >> a[i];
     }
-
-    for (int i = 0; i < n - 1; i++) {
-        long long x = a.back(); 
-
-        for (int j = 0; j < a.size(); j++) {
-            a[j] ^= x;
+    int p;
+    cin >> p;
+    int x = a[p];
+    int ops = 0;
+    for (int i = p - 1; i >= 1; i--) {
+        if (a[i] != a[i+1]) {
+            ops++;
         }
-
-        a.pop_back();
     }
-
-    if (!a.empty()) {
-        cout << a[0] << endl;
-    }}
+    for (int i = p + 1; i <= n; i++) {
+        if (a[i] != a[i-1]) {
+            ops++;
+        }
+    }
+    cout << ops << endl;}
 
 int main() {
     fastio
